@@ -7,17 +7,31 @@
 </head>
 <body>
 	<form name="myForm" method="post" action="test1">
-        Name: <input type="text" name="color" /> <br /> Super Power:
-        <input type="text" name="power" /> <br /> Image URL : <input type="text" name="" /> <br /> 
-        Family: <input type="text"
-            name="family" /> <br /> Affinity: <input type="text" name="affinity" /> <br /> 
-            HP : <input type="range" name="hp" /> <br /> 
-            Energy : <input type="range" name="energy" /> <br /> 
-            Attack : <input type="range" name="attack" /> <br /> 
-            Defense : <input type="range" name="defense" /> <br /> 
+	
+        Name: <input type="text" name="name" /> <br /> 
+        Description:<input type="text" name="description" /> <br /> 
+        Image URL : <input type="text" name="imgUrl " /> <br /> 
+        Family:
+        <select id="family" name="family">
+        	<option value="">OPT1</option>
+        </select>
+        HP : <input type="range" name="hp" /> <br /> 
+        Energy : <input type="range" name="energy" /> <br /> 
+        Attack : <input type="range" name="attack" /> <br /> 
+        Defence : <input type="range" name="defence" /> <br /> 
             <input type="button" value="cancel"/>
             <input type="submit" value="OK" />
     </form>
 	
+	<script type="text/javascript">
+	let listFamily= ["test","test2"];
+	let family = document.getElementById("family");
+	listFamily.forEach(element => function(){
+		let option = document.createElement("option");
+		option.text = element;
+		family.add(option);
+		});
+
+	</script>
 </body>
 </html>
